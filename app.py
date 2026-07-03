@@ -19,8 +19,8 @@ if st.button("Analyze"):
             result = response.json()
 
         st.subheader("Missing Skills")
-        for skill in result["missing_skills"]:
-            st.badge(skill)
+        skills = result["missing_skills"]
+        st.write(" | ".join([f"**{skill}**" for skill in skills]))
 
         st.subheader("Recommended Videos")
         for video in result["recommended_videos"]:
